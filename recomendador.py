@@ -8,7 +8,7 @@ def recomendar_juegos():
     st.write("Bienvenido al recomendador de juegos personalizado. Este recomendador tiene en cuenta tus gustos y las consolas que posees, y utiliza esta información para hacer recomendaciones basadas en géneros y plataformas de compra. También tendrás la oportunidad de puntuar los juegos que has jugado previamente para que el recomendador pueda entender mejor tus preferencias. Diviértete descubriendo nuevos juegos que te encantarán")
 
     # carga los datos
-    df = pd.read_pickle("C:/Users/Fgonz/Documentos/Repositorios/Moviles/Streamlit/streamlit-env/finaljuegos_1.pkl", compression="gzip")
+    df = pd.read_pickle("./finaljuegos_1.pkl", compression="gzip")
     df = df.iloc[:, 1:]
     df.drop_duplicates("name", inplace=True)
     df_1 = df[["name", "background_image", "rating", "released", "tag_names", "tag_names_str"]]
